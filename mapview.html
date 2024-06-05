@@ -8,18 +8,244 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/> 
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mapstyle.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <h1>
+                <a href="mapview.html" class="nav-logo">Road Information System</a>
+            </h1>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" id="upload" class="nav-a">New Ruas Jalan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" id="lihat-ruas" class="nav-a">Lihat Ruas Jalan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" id="logout" class="nav-a">Logout</a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="overlay-input">
+        <form action="#" id="dataForm"> 
+            <div class="dropdownButton">
+                <div class="dropdownKabupaten">
+                    <button onclick="myFunctionKabuputen()" class="dropbtnkabupaten">Pilih Kabupaten</button>
+                    <div id="myDropdownKabupaten" class="dropdown-content-kabupaten">
+                        <input type="text" placeholder="Search.." id="myInputKabupaten" onkeyup="filterFunctionKabupaten()">
+
+                    </div>
+                </div>
+    
+                <div class="dropdownKecamatan">
+                    <button onclick="myFunctionKecamatan()" class="dropbtnkecamatan">Pilih Kecamatan</button>
+                    <div id="myDropdownKecamatan" class="dropdown-content-kecamatan">
+                        <input type="text" placeholder="Search.." id="myInputKecamatan" onkeyup="filterFunctionKecamatan()">
+        
+                    </div>
+                </div>
+    
+                <div class="dropdownDesa">
+                    <button onclick="myFunctionDesa()" class="dropbtndesa">Pilih Desa</button>
+                    <div id="myDropdownDesa" class="dropdown-content-desa">
+                        <input type="text" placeholder="Search.." id="myInputDesa" onkeyup="filterFunctionDesa()">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="dropdownButton">
+                <div class="dropdownPerkerasan">
+                    <button onclick="myFunctionPerkerasan()" class="dropbtnperkerasan">Pilih Perkerasan</button>
+                    <div id="myDropdownPerkerasan" class="dropdown-content-perkerasan">
+                        <input type="text" placeholder="Search.." id="myInputPerkerasan" onkeyup="filterFunctionPerkerasan()">
+
+                    </div>
+                </div>
+    
+                <div class="dropdownJenis">
+                    <button onclick="myFunctionJenis()" class="dropbtnjenis">Pilih Jenis Jalan</button>
+                    <div id="myDropdownJenis" class="dropdown-content-jenis">
+                        <input type="text" placeholder="Search.." id="myInputJenis" onkeyup="filterFunctionJenis()">
+        
+                    </div>
+                </div>
+    
+                <div class="dropdownKondisi">
+                    <button onclick="myFunctionKondisi()" class="dropbtnkondisi">Pilih Kondisi Jalan</button>
+                    <div id="myDropdownKondisi" class="dropdown-content-kondisi">
+                        <input type="text" placeholder="Search.." id="myInputKondisi" onkeyup="filterFunctionKondisi()">
+        
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-ruas">
+                <div class="input-group-ruas">
+                    <label for="nama-ruas">Nama Ruas</label>
+                    <input type="text" id="nama-ruas" name="nama-ruas" placeholder="Nama Ruas">
+          
+                    <label for="kode-ruas">Kode Ruas</label>
+                    <input type="text" id="kode-ruas" name="kode-ruas" placeholder="Kode Ruas">
+
+                    <label for="lebar-ruas">Lebar Ruas</label>
+                    <input type="text" id="lebar-ruas" name="lebar-ruas" placeholder="Lebar Ruas">
+                </div>
+                
+                
+                <div id="keterangan-form">
+                    <textarea placeholder="Keterangan" id="keterangan-jalan"></textarea>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <button id="submit" type="submit">Tandai Ruas Jalan</button>
+            <button type="button" id="register">Cancel</button>
+        </form>
+    </div>
+    
     <div class="map-container">
+        <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll To Top</button>
+
+        <div id="overlay-parent">
+            <div id="overlay-data">
+                <div id="text-data">
+                    <div id="wilayah-data">
+                        <div id="kabupaten-div">
+                            <h3>Kabupaten:</h3>
+                            <h2 id="kabupaten-data">Kabupaten</h2>
+                            <br>
+                            <br>
+                        </div>
+
+
+                        <div id="kecamatan-div">
+                            <h3>Kecamatan:</h3>
+                            <h2 id="kecamatan-data">Kecamatan</h2>
+                            <br>
+                            <br>
+                        </div>
+
+
+                        <div id="desa-div">
+                            <h3>Desa:</h3>
+                            <h2 id="desa-data">Desa</h2>
+                            <br>
+                            <br>
+                        </div>
+
+                    </div>
+                    <div id="jalan-data">
+                        <div id="perkerasan-div">
+                            <h3>Perkerasan:</h3>
+                            <h2 id="perkerasan-data">Perkerasan</h2>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div id="jalan-div">
+                            <h3>Jenis Jalan:</h3>
+                            <h2 id="jenis-data">Jenis</h2>
+                            <br>
+                            <br>    
+                        </div>
+
+                        <div id="kondisi-div">
+                            <h3>Kondisi Jalan:</h3>
+                            <h2 id="kondisi-data">Kondisi</h2>
+                            <br>
+                            <br>
+                        </div>
+
+                    </div>
+    
+                    <div id="keterangan-singkat">
+                        <div id="nama-div">
+                            <h3>Nama Jalan:</h3>
+                            <h2 id="nama-data">Nama</h2>
+                            <br>
+                            <br>
+                        </div>
+                        
+                        <div id="lebar-div">
+                            <h3>Lebar Jalan:</h3>
+                            <h2 id="lebar-data">Lebar</h2>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div id="panjang-div">
+                            <h3>Panjang Jalan:</h3>
+                            <h2 id="panjang-data">Tandai jalan....</h2>
+                            <br>
+                            <br>    
+                        </div>
+                    </div>
+
+                    <div id="wilayah-data">
+                        <div id="kabupaten-div">
+                            <h3>Kode Ruas:</h3>
+                            <h2 id="kode-data">Kode Ruas</h2>
+                            <br>
+                            <br>
+                        </div>
+
+
+                        <div id="center-keterangan">
+                            <h3>Keterangan:</h3>
+                            <p id="keterangan-data">Keterangan</p>     
+                        </div>
+                    </div>
+                </div>
+                <button id="submit-data" class="submit" type="submit">Submit</button>
+                <button id="edit-info" type="button">Edit Informasi</button>
+            </div>
+        </div>
+        
+        <div id="table-overlay">
+            <div id="heading-overlay">
+                <h2>Road Information Details</h2>
+                <img src="icon/close-image.png" alt="" id="close-overlay">
+            </div>
+            
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Ruas ID</th>
+                        <th>Desa</th>
+                        <th>Kode Ruas</th>
+                        <th>Nama Ruas</th>
+                        <th>Panjang</th>
+                        <th>Lebar</th>
+                        <th>Perkerasan</th>
+                        <th>Kondisi</th>
+                        <th>Jenis</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body">
+                </tbody>
+            </table>
+            
+        </div>
+
         <div id="map"></div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
-
     <script src="map.js"></script>
 </body>
 </html>

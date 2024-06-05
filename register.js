@@ -17,6 +17,8 @@ contactForm.addEventListener('submit', function (event) {
         password: password
     };
 
+    localStorage.setItem('name', username);
+
     const requestOptions = {
         method: 'POST',
         headers: {

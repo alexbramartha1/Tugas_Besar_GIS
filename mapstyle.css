@@ -1,0 +1,902 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
+    font-weight:  500; 
+    margin:  0; 
+}
+
+h4 {
+    font-size:  24px; 
+    font-weight:  600; 
+    color:  #000; 
+    opacity:  .85; 
+}
+
+label {
+    font-size:  12.5px; 
+    color:  #000;
+    opacity:  .8;
+    font-weight:  400; 
+}
+
+form {
+    padding:  40px 30px; 
+    background:  #fefefe; 
+    display:  flex; 
+    flex-direction:  column;
+    align-items:  center; 
+    padding-bottom:  20px; 
+    width: 50vw; 
+    h1 {
+        margin-bottom:  10px;
+        font-weight: bold;
+        color:  rgba(#000, .5);
+        span {
+            color:  rgba(#000, 1);
+            font-weight:  700; 
+        }
+    } 
+    p {
+        line-height:  155%;
+        font-size:  14px; 
+        color:  #000; 
+        opacity:  .65;
+        font-weight:  400; 
+        margin-bottom:  40px; 
+    }
+}
+
+button {
+    min-width:  100px;
+    border-radius:  6px; 
+    width: 100%; /* Menetapkan lebar tombol agar mengisi parentnya */
+    margin: 0; /* Menetapkan margin atas dan bawah */
+    padding: 0.5em 1em; /* Menetapkan padding untuk ruang di dalam tombol */
+    font-size: 1em;
+    text-align:  center; 
+    padding:  15px 40px;
+    margin-bottom: 10px;
+    background-color:  #6374db; 
+    color:  #ffff; 
+    font-size:  14px;
+    margin-left:  auto; 
+    font-weight:  500; 
+    box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13); 
+    border:  none;
+    transition:  all .3s ease; 
+    outline: 0; 
+    /* &:hover {
+        transform:  translateY(-3px);
+        box-shadow:  0 2px 6px -1px rgba($primary, .65);
+        &:active {
+            transform:  scale(.99);
+        }
+    } */
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#keterangan-form {
+    width: 50%;
+}
+
+.input-group-ruas {
+    width: 50%;
+    height: fit-content;
+    margin-right: 45px;
+}
+
+.input-group-ruas #nama-ruas {
+    margin-bottom: 27px;
+}
+
+.input-group-ruas #kode-ruas {
+    margin-bottom: 27px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.form-ruas {
+    height: fit-content;
+    display: flex;
+}
+
+#register {
+    margin-bottom: 20px;
+    background-color: #f3f2f2;
+    color: #004e8e;
+}
+
+#edit-info {
+    margin-bottom: 20px;
+    background-color: #f3f2f2;
+    color: #004e8e;
+}
+
+
+#hr {
+    margin-bottom: 30px;
+}
+
+$displacement:  3px; 
+@keyframes shake-shake {
+    0% { transform: translateX(-$displacement);}
+    20% { transform: translateX($displacement); }
+    40% { transform: translateX(-$displacement);}
+    60% { transform: translateX($displacement);}  
+    80% { transform: translateX(-$displacement);}
+    100% { transform: translateX(0px);}
+}
+
+.session {
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: row; /* Arahkan item secara horizontal */
+    width: 50%; /* Lebar div disesuaikan dengan konten */
+    height: auto; /* Tinggi div disesuaikan dengan konten */
+    margin: auto; /* Marginkan div secara otomatis di tengah layar */
+    background: #ffffff; /* Warna latar belakang */
+    border-radius: 6px; /* Border radius */
+    box-shadow: 0px 2px 6px -1px rgba(0,0,0,.12); /* Efek bayangan */
+    justify-content: center; /* Posisikan item secara horizontal di tengah */
+}
+
+center {
+    width: 100%;
+}
+
+.left {
+    width:  25vw; 
+    height:  auto; 
+    min-height:  100%; 
+    position:  relative; 
+    background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size:  cover;
+    border-top-left-radius:  6px; 
+    border-bottom-left-radius:  6px; 
+    svg {
+        height:  40px; 
+        width:  auto; 
+        margin:  20px; 
+    }
+}
+
+#map {
+    width: 100%;
+    height: 100%; /* Adjust height for header and additional div */
+    position: absolute;
+    top: 100dp;
+    left: 0;
+    z-index: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: large;
+    color: #000;
+}
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+    z-index: 9999;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 3rem;
+}
+
+.nav-item {
+    border:none;
+    position: relative;
+}
+
+.nav-item :hover{
+    border: none;
+}
+
+.nav-item ::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 50%;
+    bottom: -5px;
+    background-color: rgb(0, 0, 0);
+    transition: all ease-in-out .2s;
+}
+
+.nav-item :hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+#nav-a {
+    color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -200%;
+        z-index: 9999;
+        top: 6rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        z-index: 9999;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        z-index: 9999;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        z-index: 9999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+        z-index: 9999;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+        z-index: 9999;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 9999;
+    }
+}
+
+.overlay-input {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    width: 50%;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 20px; /* Sesuaikan padding sesuai kebutuhan */
+}
+
+#wilayah-data {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#jalan-data {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#keterangan-singkat {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#kabupaten-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#kecamatan-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#desa-div {
+    width: 34%;
+}
+
+#perkerasan-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#jalan-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#kondisi-div {
+    width: 34%;
+}
+
+#nama-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#lebar-div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+#panjang-div {
+    width: 34%;
+}
+
+#overlay-parent {
+    width: 40%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlay-data {
+    display: none;
+    width: 40%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Gunakan posisi absolut */
+    top: 15%;
+    bottom: 0%; /* Sesuaikan dengan posisi yang diinginkan */
+    right: 5%; /* Sesuaikan dengan posisi yang diinginkan */
+    z-index: 1000; /* Tetapkan nilai z-index yang tinggi */
+    background-color: rgba(255, 255, 255, 0.9); /* Tambahkan latar belakang semi-transparan */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#center-keterangan {
+    width: 100%;
+    height: fit-content;
+}
+
+#text-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropbtnkabupaten {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 40px; /* Menambahkan jarak antara tombol */
+    margin-bottom: 25px;
+}
+  
+.dropbtnkabupaten:hover, .dropbtnkabupaten:focus {
+    background-color: #6374db;
+}
+
+#myInputKabupaten {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputKabupaten:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-kabupaten {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-kabupaten a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownKabupaten {
+    width:  34%;
+    position: relative;
+    display: flex;
+}
+
+.dropdown-content-kabupaten {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropbtnkecamatan {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 40px; /* Menambahkan jarak antara tombol */
+    margin-bottom: 25px;
+}
+  
+.dropbtnkecamatan:hover, .dropbtnkecamatan:focus {
+    background-color: #6374db;
+}
+
+#myInputKecamatan {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputKecamatan:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-kecamatan {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-kecamatan a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-kecamatan {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropdownKecamatan {
+    width:  33%;
+    position: relative;
+    display: flex;
+}
+
+
+.dropbtndesa {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    margin-bottom: 25px;
+}
+  
+.dropbtndesa:hover, .dropbtndesa:focus {
+    background-color: #6374db;
+}
+
+#myInputDesa {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputDesa:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-desa {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-desa a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-desa {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropdownDesa {
+    width:  33%;
+    position: relative;
+    display: flex;
+}
+
+.dropbtnperkerasan {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 40px; /* Menambahkan jarak antara tombol */
+}
+  
+.dropbtnperkerasan:hover, .dropbtnperkerasan:focus {
+    background-color: #6374db;
+}
+
+#myInputPerkerasan {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputPerkerasan:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-perkerasan {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-perkerasan a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-perkerasan {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropdownPerkerasan {
+    width: 34%;
+    position: relative;
+    display: flex;
+}
+
+.dropbtnjenis {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 40px; /* Menambahkan jarak antara tombol */
+}
+  
+.dropbtnjenis:hover, .dropbtnjenis:focus {
+    background-color: #6374db;
+}
+
+#myInputJenis {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputJenis:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-jenis {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-jenis a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-jenis {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropdownJenis {
+    width: 33%;
+    position: relative;
+    display: flex;
+}
+
+.dropbtnkondisi {
+    background-color: #6374db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+  
+.dropbtnkondisi:hover, .dropbtnkondisi:focus {
+    background-color: #6374db;
+}
+
+#myInputKondisi {
+    box-sizing: border-box;
+    background-image: url('icon/search.png');
+    background-size: 20px;
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInputKondisi:focus {outline: 3px solid #ddd;}
+
+.dropdown-content-kondisi {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    top: 100%; /* Menentukan posisi awal konten dropdown, di bawah tombol */
+    left: 0; /* Menentukan posisi awal konten dropdown, di sebelah kiri tombol */
+}
+
+.dropdown-content-kondisi a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownKondisi {
+    width: 33%;
+    position: relative;
+    display: flex;
+}
+
+.dropdown-content-kondisi {
+    max-height: 200px; /* Atur maksimum tinggi dropdown */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi maksimum */
+}
+
+.dropdownButton {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#dataForm {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.showKabupaten {display: block;}
+.showKecamatan {display: block;}
+.showDesa {display: block;}
+.showPerkerasan {display: block;}
+.showJenis {display: block;}
+.showKondisi {display: block;}
+
+#scrollToTopBtn {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    bottom: -50px;
+    margin-left: 20px; /* Position the element horizontally centered */
+    background-color: #6374db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#table-overlay {
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 20px; 
+}
+
+#deleteButton {
+    background-color: red;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #6374db;
+    color: #ffffff;
+    text-align: left;
+}
+
+#heading-overlay {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading-overlay h2 {
+    margin-bottom: 20px;
+}
+
+#close-overlay {
+    float: right;
+    width: 2%;
+    height: 2%;
+    margin-bottom: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #6374db;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+

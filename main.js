@@ -1,10 +1,12 @@
-const apiUrl = 'https://gisapis.manpits.xyz/api/login';
-
-const contactForm = document.getElementById('dataForm');
-var token = localStorage.getItem('token');
+const token = localStorage.getItem('token');
 
 if (!token) {
+    const apiUrl = 'https://gisapis.manpits.xyz/api/login';
+
+    const contactForm = document.getElementById('dataForm');
+
     contactForm.addEventListener('submit', function (event) {
+        event.preventDefault()
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
@@ -36,6 +38,7 @@ if (!token) {
             if (dataObj.meta.message == "Successfully logged in") {
                 alert(dataObj.meta.message);
                 localStorage.setItem('token', dataObj.meta.token);
+                localStorage.setItem('email', email);
                 window.location.href = "mapview.html"; // Mengarahkan ke halaman login jika login berhasil
             } else {
                 alert(dataObj.meta.message); // Menampilkan pesan kesalahan jika ada

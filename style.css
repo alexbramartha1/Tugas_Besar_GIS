@@ -4,14 +4,13 @@
     margin:  0; 
 }
 
-$primary: rgb(182,157,230); 	
 html, body {
-    height:  100vh; 
-    width:  100vh;
+    height:  100%; 
+    width:  100%;
     display:  flex; 
     align-items: center;    
     justify-content: center; 
-    background:  #f3f2f2; 
+    background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
 h4 {
@@ -221,14 +220,77 @@ center {
     width: 100%;
     height: 100%; /* Adjust height for header and additional div */
     position: absolute;
-    /* top: 10vh; Height of the header */
+    top: 10vh;
     left: 0;
     z-index: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #0000;
+}
+
+.nav-link:hover{
+    color: #000;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+#nav-a {
+    color: #000;
+}
+
 .leaflet-layer,
 .leaflet-control-zoom-in,
-.leaflet-control-zoom-out,
-.leaflet-control-attribution {
+.leaflet-control-zoom-out
+/* .leaflet-control-attribution {
   filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
-}
+} */
